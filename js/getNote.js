@@ -21,7 +21,7 @@ const renderArticle = (_id, title, content, description, tags, cover_image, crea
     const articleTitle = document.querySelector('.article-title');
     const articleCreatedDate = document.querySelector('.article-created-date');
     const articleImage = document.querySelector('.article-cover');
-    const contentText = new showdown.Converter().makeHtml(content);
+    const contentText = marked.parse(content);
     const dom = new DOMParser();
     const html = dom.parseFromString(contentText, "text/html");
     // setup images 
@@ -40,6 +40,10 @@ const renderArticle = (_id, title, content, description, tags, cover_image, crea
     html.querySelectorAll("iframe").forEach(frame => {
         frame.style.height = '800px';
         frame.style.padding = '3rem';
+    })
+    // tables
+    html.querySelectorAll("table").forEach(table => {
+        table.classList.add('table')
     })
     articleTitle.textContent = title;
     articleCreatedDate.textContent = created_date

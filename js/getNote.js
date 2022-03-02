@@ -32,8 +32,8 @@ const renderArticle = (_id, title, content, description, tags, cover_image, crea
     // equation
     html.querySelectorAll("p").forEach(p => {
         if (p.innerHTML.startsWith('$$')) {
-            p.innerHTML = p.innerHTML.replace('$$', '').replace('$$', '');
-            p.classList.add('bg-dark', 'text-white', 'text-center', 'p-4')
+            // p.innerHTML = p.innerHTML.replace('$$', '').replace('$$', '');
+            p.classList.add('bg-light', 'text-dark', 'text-center', 'p-4')
         }
     })
     // iframe

@@ -46,8 +46,9 @@ const renderArticle = (_id, title, content, description, tags, cover_image, crea
         table.classList.add('table')
     })
     // codes
-    html.querySelectorAll('code').forEach(code => {
-        code.classList.add('bg-dark', 'text-center', 'p-4');
+    html.querySelectorAll('pre').forEach(code => {
+        code.classList.add('bg-light', 'p-4', 'w-100', 'text-dark');
+        code.classList.remove('language-other')
     })
     articleTitle.textContent = title;
     articleCreatedDate.textContent = created_date

@@ -45,6 +45,10 @@ const renderArticle = (_id, title, content, description, tags, cover_image, crea
     html.querySelectorAll("table").forEach(table => {
         table.classList.add('table')
     })
+    // codes
+    html.querySelectorAll('code').forEach(code => {
+        code.classList.add('bg-dark', 'text-center', 'p-4');
+    })
     articleTitle.textContent = title;
     articleCreatedDate.textContent = created_date
     articleImage.setAttribute("src", cover_image)
